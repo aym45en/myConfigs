@@ -14,11 +14,7 @@ alias ca 'clear'
 alias checkcnx 'ping -c 5 8.8.8.8'
 alias open 'xdg-open'
 alias vi 'nvim'
-alias chatgpt 'chromium --app=https://chat.openai.com'
-alias github 'chromium --app=https://https://github.com/aym45en45.com'
-alias gtranslate 'chromium --app=https://translate.google.com'
 starship init fish | source
 
 ca
-cd ~/Desktop/
 
