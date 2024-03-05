@@ -30,11 +30,14 @@ import subprocess
 from libqtile import bar, layout, qtile, widget , hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
+from libqtile.command import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
+alt = "mod1"
 terminal = "kitty"
 
+# for polybar
 @hook.subscribe.startup_once
 def autostart():
     home = os.path.expanduser('~')
@@ -76,7 +79,7 @@ keys = [
     Key([mod], "t", lazy.spawn(terminal), desc="Launch terminal"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "c", lazy.window.kill(), desc="Kill focused window"),
+    Key([alt], "c", lazy.window.kill(), desc="Kill focused window"),
     Key(
         [mod],
         "f",
@@ -98,6 +101,7 @@ keys = [
 
     Key([mod], "m", lazy.window.toggle_maximize()),
     Key([mod, "control"], "t", lazy.spawn("telegram-desktop")),
+    Key([mod], "c", lazy.spawn("code")),
     Key([mod, "shift"], "f", lazy.spawn("chromium")),
     Key([mod, "shift"], "c", lazy.spawn("chromium --app=https://chat.openai.com")),
     Key([mod, "shift"], "g", lazy.spawn("chromium --app=https://github.com/aym45en45")),
