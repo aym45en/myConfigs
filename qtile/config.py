@@ -106,6 +106,7 @@ keys = [
     Key([mod, "shift"], "c", lazy.spawn("chromium --app=https://chat.openai.com")),
     Key([mod, "shift"], "g", lazy.spawn("chromium --app=https://github.com/aym45en45")),
     Key([mod, "shift"], "t", lazy.spawn("chromium --app=https://translate.google.com")),
+    Key([mod, "shift"], "l", lazy.spawn("chromium --app=https://elearning.univ-constantine2.dz/elearning/")),
     Key([mod], "e", lazy.spawn("thunar")),
 ]
 
