@@ -2,8 +2,8 @@
 @theme "/usr/share/rofi/themes/Arc-Dark.rasi"
 
 configuration {
-    display-drun: "Applications";
-    display-window: "Window";
+    display-drun: "Applications:";
+    display-window: "Window:";
     drun-display-format: "{icon} {name}";
     modi: "drun,run,window";
     show-icons: true;

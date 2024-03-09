@@ -14,7 +14,35 @@ alias ca 'clear'
 alias checkcnx 'ping -c 5 8.8.8.8'
 alias open 'xdg-open'
 alias vi 'nvim'
-starship init fish | source
+#starship init fish | source
 
 ca
+function fish_prompt
+    set_color cyan
+    echo -n '┌──('
+    set_color yellow
+    echo -n (whoami) '㉿' (hostname)
+    set_color cyan
+    echo -n ')-['
+    set_color magenta
+    echo -n (prompt_pwd)
+    set_color cyan
+    echo -n ']'
+
+    # Check if we're in a Git repository
+    if git rev-parse --is-inside-work-tree > /dev/null 2>&1
+        set -l branch_name (git rev-parse --abbrev-ref HEAD)
+        if test "$branch_name" != "HEAD"
+            echo -n " ("
+            set_color green
+            echo -n $branch_name
+            set_color cyan
+            echo -n ")"
+        end
+    end
+
+    echo ''
+    echo -n '└─$ '
+    set_color normal
+end
 
