@@ -30,7 +30,7 @@ function fish_prompt
     echo -n '┌──('
 
     # Check the hostname
-    set -l host_name (hostname)
+    set -l host_name (uname -n)
     
     # Set the appropriate symbol based on the hostname
     switch $host_name
