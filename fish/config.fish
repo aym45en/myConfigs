@@ -17,6 +17,15 @@ alias vi 'nvim'
 ca
 function fish_prompt
     set -l current_time (date "+%H:%M:%S")
+    echo -n "$current_time 󱑔 "
+    # Convert milliseconds to minutes and seconds for command execution time
+    set -l cmd_minutes (math "round($CMD_DURATION / 60000)")
+    set -l cmd_seconds (math "round($CMD_DURATION % 60000 / 1000)")
+
+    # Display command execution time in the format "0 m 15 s"
+    echo -n "$cmd_minutes:$cmd_seconds 󰅒"
+    echo ''
+
     set_color cyan
     echo -n '┌──('
 
