@@ -21,7 +21,35 @@ function fish_prompt
     set_color cyan
     echo -n '┌──('
     set_color yellow
-    echo -n (whoami) '㉿' (hostname)
+    echo -n (whoami) ' '
+
+    # Check the distribution
+    set -l distro (cat /etc/*release 2>/dev/null | grep '^ID=' | cut -d'=' -f2 | tr -d '"\n')
+
+    # Set the appropriate symbol based on the distribution
+    switch $distro
+        case 'kali'
+            set_color red
+            echo -n '⚡️'
+            set_color yellow
+            echo -n 'kali'
+        case 'arch'
+            set_color red
+            echo -n '🏹'
+            set_color yellow
+            echo -n 'arch'
+        case 'android'
+            set_color red
+            echo -n '📱'
+            set_color yellow
+            echo -n 'android'
+        case '*'
+            set_color red
+            echo -n '⁉️'
+            set_color yellow
+            echo -n $distro
+    end
+
     set_color cyan
     echo -n ')-['
     set_color magenta
