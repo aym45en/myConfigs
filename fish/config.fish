@@ -20,7 +20,6 @@ ca
 function fish_prompt
     set_color cyan
     echo -n '┌──('
-    echo -n (whoami)  
 
     # Check the hostname
     set -l host_name (hostname)
@@ -28,14 +27,17 @@ function fish_prompt
     # Set the appropriate symbol based on the hostname
     switch $host_name
         case 'kali'
+            echo -n (whoami)  
             echo -n '㉿'
             echo -n $host_name
         case 'ROUISSA'
+            echo -n (whoami)  
             echo -n ''
             echo -n $host_name
         case 'localhost'
+            echo -n 'andr'
             echo -n ''
-            echo -n $host_name
+            echo -n 'oid'
         case '*'
             echo -n '󰨊'
             echo -n $host_name
