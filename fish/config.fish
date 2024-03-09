@@ -38,7 +38,7 @@ function fish_prompt
             echo -n '🏹'
             set_color yellow
             echo -n 'arch'
-        case 'realme RMX3151'
+        case 'localhost'
             set_color red
             echo -n '📱'
             set_color yellow
