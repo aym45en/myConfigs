@@ -11,13 +11,12 @@ alias ll 'ls -l'
 alias lla 'ls -la'
 alias grep 'grep --color=auto'
 alias ca 'clear'
-alias checkcnx 'ping -c 5 8.8.8.8'
 alias open 'xdg-open'
 alias vi 'nvim'
-#starship init fish | source
 
 ca
 function fish_prompt
+    set -l current_time (date "+%H:%M:%S")
     set_color cyan
     echo -n '┌──('
 
