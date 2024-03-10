@@ -41,22 +41,10 @@ function fish_prompt
 
     # Check the hostname
     set -l host_name (uname -n)
-    
-    # Set the appropriate symbol based on the hostname
-    switch $host_name
-        case 'kali'
-            echo -n (whoami)  
-            echo -n '㉿'
-            echo -n $host_name
-        case 'ROUISSA'
-            echo -n (whoami)  
-            toilet -f term -F border --filter border -w 100 ''
-            echo -n $host_name
-        case 'localhost'
-            echo -n ' 󰬽 󰬾 '
-        case '*'
-            echo -n '󰨊'
-            echo -n $host_name
+    if [ $host_name = 'localhost' ]
+      echo -n ' 󰬽 󰬾 '
+    else
+      echo -n (whoami)
     end
 
     set_color cyan
