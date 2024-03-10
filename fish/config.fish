@@ -15,6 +15,16 @@ alias open 'xdg-open'
 alias vi 'nvim'
 
 ca
+ 
+if test (uname -n) = 'localhost'
+    cd ~/storage/shared/univ-info/
+    neofetch
+    alias githubt "ccrypt -c ~/storage/shared/univ-info/.cpt/n.cpt | tail -n 1" 
+else
+    alias githubt "~/.cpt/n.cpt"
+end
+
+
 function fish_prompt
     set -l current_time (date "+%H:%M:%S")
     echo -n "$current_time 󱑔 "
@@ -43,9 +53,7 @@ function fish_prompt
             echo -n ''
             echo -n $host_name
         case 'localhost'
-            echo -n 'andr'
-            echo -n ''
-            echo -n 'oid'
+            echo -n ' 󰬽 󰬾 '
         case '*'
             echo -n '󰨊'
             echo -n $host_name
