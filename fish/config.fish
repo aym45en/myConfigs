@@ -50,7 +50,7 @@ function fish_prompt
             echo -n $host_name
         case 'ROUISSA'
             echo -n (whoami)  
-            echo -n ''
+            toilet -f term -F border --filter border -w 100 ''
             echo -n $host_name
         case 'localhost'
             echo -n ' 󰬽 󰬾 '
