@@ -21,7 +21,7 @@ if test (uname -n) = 'localhost'
     neofetch
     alias githubt "ccrypt -c ~/storage/shared/univ-info/.cpt/n.cpt | tail -n 1" 
 else
-    alias githubt "ccrypt -c ~/.cpt/n.cpt | tail -n 1"
+    alias githubt "gpg -d ~/.p/p.pdf| tail -n 1"
 end
 
 
