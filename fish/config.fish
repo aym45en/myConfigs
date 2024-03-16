@@ -19,9 +19,11 @@ ca
 if test (uname -n) = 'localhost'
     cd ~/storage/shared/univ-info/
     neofetch
-    alias githubt "ccrypt -c ~/storage/shared/univ-info/.cpt/n.cpt | tail -n 1" 
+  alias githubt "gpg -d ~/storage/shared/univ-info/.p/p.pdf | head -n 28 | tail -n 1"
+  alias passkey "gpg -d ~/storage/shared/univ-info/.p/p.pdf | head -n 30 | tail -n 1"
 else
-    alias githubt "gpg -d ~/.p/p.pdf| tail -n 1"
+  alias githubt "gpg -d ~/.p/p.pdf | head -n 28 | tail -n 1"
+  alias passkey "gpg -d ~/.p/p.pdf | head -n 30 | tail -n 1"
 end
 
 
