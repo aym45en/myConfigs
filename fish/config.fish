@@ -41,10 +41,17 @@ function fish_prompt
 
     # Check the hostname
     set -l host_name (uname -n)
+    set -l username (whoami)
+
     if [ $host_name = 'localhost' ]
       echo -n ' 󰬽 󰬾 '
     else
-      echo -n (whoami)
+      if [ $username = 'root' ]
+        set_color red
+        echo -n (whoami)
+      else
+        echo -n (whoami)
+      end
     end
 
     set_color cyan
