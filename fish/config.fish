@@ -19,16 +19,16 @@ if status is-interactive
   ca
    
   if test (uname -n) = 'localhost'
-    cd ~/storage/shared/
     neofetch
-    alias githubt "gpg -d ~/storage/shared/univ-info/.p/p.pdf | head -n 28 | tail -n 1"
-    alias passkey "gpg -d ~/storage/shared/univ-info/.p/p.pdf | head -n 30 | tail -n 1"
+    alias githubt "gpg -d ~/univ-info/.p/p.pdf | head -n 28 | tail -n 1"
+    alias passkey "gpg -d ~/univ-info/.p/p.pdf | head -n 30 | tail -n 1"
+    alias allpassowrds "gpg -d ~/univ-info/.p/p.pdf"
     function pull_all_repos
-      set -l repos ./univ-info/s4/s4 \
-                   ./univ-info/s4/daw \
-                   ./univ-info/.p \
-                   ./univ-info/.myconfigs \
-                   ./myNovel/ibada 
+      set -l repos ~/univ-info/s4/s4 \
+                   ~/univ-info/s4/daw \
+                   ~/univ-info/.p \
+                   ~/univ-info/.myconfigs \
+                   ~/myNovel/ibada 
       echo "Do you want to perform a git pull for all repositories? (y/N)"
       read -l confirm
       if test "$confirm" = "y" -o "$confirm" = "Y"
@@ -36,9 +36,8 @@ if status is-interactive
               echo "Pulling changes in $repo..."
               cd $repo
               git pull
-              cd ~/storage/shared/
           end
-              cd ~/storage/shared/univ-info/
+          cd
       else
           echo "Skipping git pull for all repositories."
       end
