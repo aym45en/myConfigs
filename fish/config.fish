@@ -21,8 +21,7 @@ if status is-interactive
   if test (uname -n) = 'localhost'
     neofetch
     alias githubt "gpg -d ~/univ-info/.p/p.pdf | head -n 28 | tail -n 1"
-    alias passkey "gpg -d ~/univ-info/.p/p.pdf | head -n 30 | tail -n 1"
-    alias allpassowrds "gpg -d ~/univ-info/.p/p.pdf"
+    alias passkey "gpg -d ~/univ-info/.p/p.pdf"
     function pull_all_repos
       set -l repos ~/univ-info/s4/s4 \
                    ~/univ-info/s4/daw \
@@ -44,9 +43,27 @@ if status is-interactive
     end
   else
     alias githubt "gpg -d ~/.p/p.pdf | head -n 28 | tail -n 1"
-    alias passkey "gpg -d ~/.p/p.pdf | head -n 30 | tail -n 1"
+    alias passkey "gpg -d ~/.p/p.pdf"
+    function pull_all_repos
+      set -l repos ~/Desktop/s4/ \
+                   ~/Desktop/daw \
+                   ~/.p \
+                   ~/.myConfigs \
+                   ~/ibada 
+      echo "Do you want to perform a git pull for all repositories? (y/N)"
+      read -l confirm
+      if test "$confirm" = "y" -o "$confirm" = "Y"
+          for repo in $repos
+              echo "Pulling changes in $repo..."
+              cd $repo
+              git pull
+          end
+          cd
+      else
+          echo "Skipping git pull for all repositories."
+      end
+    end
   end
-
 
   function fish_prompt
       set -l current_time (date "+%H:%M:%S")
@@ -100,5 +117,5 @@ if status is-interactive
       echo -n '└─$ '
       set_color normal
   end
-  pull_all_repos
+  alias gitpull 'pull_all_repos'
 end

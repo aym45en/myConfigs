@@ -52,7 +52,6 @@ keys = [
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
     Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
@@ -100,13 +99,15 @@ keys = [
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer sset Master 10+ unmute"),desc="Increase Audio"),
 
     Key([mod], "m", lazy.window.toggle_maximize()),
+    Key([alt], "space", lazy.spawn("setxkbmap -layout ara")),
+    Key([alt, "control"], "space", lazy.spawn("setxkbmap -layout us")),
     Key([mod, "control"], "t", lazy.spawn("telegram-desktop")),
     Key([mod], "c", lazy.spawn("code")),
-    Key([mod, "shift"], "f", lazy.spawn("chromium")),
-    Key([mod, "shift"], "c", lazy.spawn("chromium --app=https://chat.openai.com")),
-    Key([mod, "shift"], "g", lazy.spawn("chromium --app=https://github.com/aym45en45")),
-    Key([mod, "shift"], "t", lazy.spawn("chromium --app=https://translate.google.com")),
-    Key([mod, "shift"], "l", lazy.spawn("chromium --app=https://elearning.univ-constantine2.dz/elearning/")),
+    Key([mod], "b", lazy.spawn("brave")),
+    Key([mod, "shift"], "c", lazy.spawn("brave --app=https://chat.openai.com")),
+    Key([mod, "shift"], "g", lazy.spawn("brave --app=https://github.com/aym45en45")),
+    Key([mod, "shift"], "t", lazy.spawn("brave --app=https://translate.google.com")),
+    Key([mod, "shift"], "l", lazy.spawn("brave --app=https://elearning.univ-constantine2.dz/elearning/")),
     Key([mod], "e", lazy.spawn("thunar")),
 ]
 
@@ -175,7 +176,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="JetBrainsMonoNerdFontMono-Light",
+    font="JetBrainsMono Nerd Font Mono",
     fontsize=12,
     padding=3,
 )
