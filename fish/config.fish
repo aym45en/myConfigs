@@ -15,6 +15,9 @@ if status is-interactive
   alias ca 'clear'
   alias open 'xdg-open'
   alias vi 'nvim'
+  alias .2 'cd ../..'
+  alias .3 'cd ../../..'
+  alias .4 'cd ../../../..'
 
   ca
    
