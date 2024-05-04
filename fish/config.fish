@@ -117,7 +117,11 @@ if status is-interactive
       end
 
       echo ''
-      echo -n '└─$ '
+      if [ $username = 'root' ]
+        echo -n '└─# '
+      else
+        echo -n '└─$ '
+      end
       set_color normal
   end
   alias gitpull 'pull_all_repos'

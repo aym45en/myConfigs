@@ -107,7 +107,7 @@ keys = [
     Key([mod, "shift"], "c", lazy.spawn("brave --app=https://chat.openai.com")),
     Key([mod, "shift"], "g", lazy.spawn("brave --app=https://github.com/aym45en45")),
     Key([mod, "shift"], "t", lazy.spawn("brave --app=https://translate.google.com")),
-    Key([mod, "shift"], "l", lazy.spawn("brave --app=https://elearning.univ-constantine2.dz/elearning/")),
+    Key([mod, "shift"], "e", lazy.spawn("brave --app=https://elearning.univ-constantine2.dz/elearning/")),
     Key([mod], "e", lazy.spawn("thunar")),
 ]
 
