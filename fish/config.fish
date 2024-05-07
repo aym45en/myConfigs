@@ -69,7 +69,7 @@ if status is-interactive
   end
 
   function fish_prompt
-      set -l current_time (date "+%H:%M:%S")
+      set -l current_time (date "+%D-%H:%M:%S")
       echo -n "$current_time 󱑔 "
       # Convert milliseconds to minutes and seconds for command execution time
       set -l cmd_minutes (math "round($CMD_DURATION / 60000)")
