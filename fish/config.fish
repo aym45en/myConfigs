@@ -23,7 +23,7 @@ if status is-interactive
   ca
    
   set public_ip (curl -s ipinfo.io/ip)
-  set -l current_tim (date "+%D-%H:%M:%S")
+  set -l current_tim (date "+%d/%m/%Y-%H:%M:%S")
   echo "$current_tim | $public_ip" >> ~/ipList
 
   if test (uname -n) = 'localhost'
@@ -74,7 +74,7 @@ if status is-interactive
   end
 
   function fish_prompt
-      set -l current_time (date "+%D-%H:%M:%S")
+      set -l current_time (date "+%d/%m/%Y-%H:%M:%S")
       echo -en "\n$current_time 󱑔 "
       # Convert milliseconds to minutes and seconds for command execution time
       set -l cmd_minutes (math "round($CMD_DURATION / 60000)")
