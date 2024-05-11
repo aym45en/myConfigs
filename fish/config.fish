@@ -18,9 +18,14 @@ if status is-interactive
   alias .2 'cd ../..'
   alias .3 'cd ../../..'
   alias .4 'cd ../../../..'
+  alias ipShow 'curl ipinfo.io/ip'
 
   ca
    
+  set public_ip (curl -s ipinfo.io/ip)
+  set -l current_tim (date "+%D-%H:%M:%S")
+  echo "$current_tim | $public_ip" >> ~/ipList
+
   if test (uname -n) = 'localhost'
     neofetch
     alias githubt "gpg -d ~/univ-info/.p/p.pdf | head -n 28 | tail -n 1"
