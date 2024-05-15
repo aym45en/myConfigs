@@ -36,18 +36,12 @@ if status is-interactive
                    ~/univ-info/.p \
                    ~/univ-info/.myconfigs \
                    ~/myNovel/ibada 
-      echo "Do you want to perform a git pull for all repositories? (y/N)"
-      read -l confirm
-      if test "$confirm" = "y" -o "$confirm" = "Y"
-          for repo in $repos
-              echo "Pulling changes in $repo..."
-              cd $repo
-              git pull
-          end
-          cd
-      else
-          echo "Skipping git pull for all repositories."
+      for repo in $repos
+          echo "Pulling changes in $repo..."
+          cd $repo
+          git pull
       end
+      cd
     end
   else
     alias githubt "gpg -d ~/.p/p.pdf | head -n 28 | tail -n 1"
@@ -58,18 +52,12 @@ if status is-interactive
                    ~/.p \
                    ~/.myConfigs \
                    ~/ibada 
-      echo "Do you want to perform a git pull for all repositories? (y/N)"
-      read -l confirm
-      if test "$confirm" = "y" -o "$confirm" = "Y"
-          for repo in $repos
-              echo "Pulling changes in $repo..."
-              cd $repo
-              git pull
-          end
-          cd
-      else
-          echo "Skipping git pull for all repositories."
+      for repo in $repos
+          echo "Pulling changes in $repo..."
+          cd $repo
+          git pull
       end
+      cd
     end
   end
 
