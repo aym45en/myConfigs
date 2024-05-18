@@ -35,7 +35,8 @@ if status is-interactive
           cd $repo
           set_color blue
           echo -e "\n ------------------------------------"
-          echo -e " ####### $repo ####### \n"
+          set repoPath (echo $repo | cut -d '/' -f 7-)
+          echo -e " ####### ~/$repoPath ####### \n"
           set_color white
           git status
           git pull
@@ -54,7 +55,8 @@ if status is-interactive
           cd $repo
           set_color blue
           echo -e "\n ------------------------------------"
-          echo -e " ####### $repo ####### \n"
+          set repoPath (echo $repo | cut -d '/' -f 4-)
+          echo -e " ####### ~/$repoPath ####### \n"
           set_color white
           git status
           git pull
@@ -119,5 +121,4 @@ if status is-interactive
       end
       set_color normal
   end
-  alias gitpull 'pull_all_repos'
 end
