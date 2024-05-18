@@ -31,7 +31,6 @@ if status is-interactive
                    ~/univ-info/.myconfigs \
                    ~/myNovel/ibada 
       for repo in $repos
-          echo "Pulling changes in $repo..."
           cd $repo
           set_color blue
           echo -e "\n ------------------------------------"
@@ -51,7 +50,6 @@ if status is-interactive
                    ~/.myConfigs \
                    ~/ibada 
       for repo in $repos
-          echo "Pulling changes in $repo..."
           cd $repo
           set_color blue
           echo -e "\n ------------------------------------"
