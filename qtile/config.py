@@ -103,11 +103,7 @@ keys = [
     Key([alt, "control"], "space", lazy.spawn("setxkbmap -layout us")),
     Key([mod, "control"], "t", lazy.spawn("telegram-desktop")),
     Key([mod], "c", lazy.spawn("code")),
-    Key([mod], "b", lazy.spawn("brave")),
-    Key([mod, "shift"], "c", lazy.spawn("brave --app=https://chat.openai.com")),
-    Key([mod, "shift"], "g", lazy.spawn("brave --app=https://github.com/aym45en45")),
-    Key([mod, "shift"], "t", lazy.spawn("brave --app=https://translate.google.com")),
-    Key([mod, "shift"], "e", lazy.spawn("brave --app=https://elearning.univ-constantine2.dz/elearning/")),
+    Key([mod], "b", lazy.spawn("chromium")),
     Key([mod], "e", lazy.spawn("thunar")),
 ]
 
