@@ -22,39 +22,41 @@ if status is-interactive
 
   ca
    
-  set public_ip (curl -s ipinfo.io/ip)
-  set -l current_tim (date "+%d/%m/%Y-%H:%M:%S")
-  echo "$current_tim | $public_ip" >> ~/ipList
-
   if test (uname -n) = 'localhost'
     neofetch
-    alias githubt "gpg -d ~/univ-info/.p/p.pdf | head -n 28 | tail -n 1"
     alias passkey "gpg -d ~/univ-info/.p/p.pdf"
     function pull_all_repos
-      set -l repos ~/univ-info/s4/s4 \
-                   ~/univ-info/s4/daw \
+      set -l repos ~/univ-info/s4/ \
                    ~/univ-info/.p \
                    ~/univ-info/.myconfigs \
                    ~/myNovel/ibada 
       for repo in $repos
           echo "Pulling changes in $repo..."
           cd $repo
+          set_color blue
+          echo -e "\n ------------------------------------"
+          echo -e " ####### $repo ####### \n"
+          set_color white
+          git status
           git pull
       end
       cd
     end
   else
-    alias githubt "gpg -d ~/.p/p.pdf | head -n 28 | tail -n 1"
     alias passkey "gpg -d ~/.p/p.pdf"
     function pull_all_repos
       set -l repos ~/Desktop/s4/ \
-                   ~/Desktop/daw \
                    ~/.p \
                    ~/.myConfigs \
                    ~/ibada 
       for repo in $repos
           echo "Pulling changes in $repo..."
           cd $repo
+          set_color blue
+          echo -e "\n ------------------------------------"
+          echo -e " ####### $repo ####### \n"
+          set_color white
+          git status
           git pull
       end
       cd
