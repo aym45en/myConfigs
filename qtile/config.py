@@ -30,7 +30,6 @@ import subprocess
 from libqtile import bar, layout, qtile, widget , hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
-from libqtile.command import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
