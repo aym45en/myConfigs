@@ -94,10 +94,9 @@ keys = [
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl s 10+"),desc="Increase brightness"),
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl s 10-"),desc="Decrease brightness"),
 
-    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer sset Master 10- unmute"),desc="Decrease Audio"),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer sset Master 10+ unmute"),desc="Increase Audio"),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer sset Master 1- unmute"),desc="Decrease Audio"),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer sset Master 1+ unmute"),desc="Increase Audio"),
 
-    Key([mod], "m", lazy.window.toggle_maximize()),
     Key([alt], "space", lazy.spawn("setxkbmap -layout ara")),
     Key([alt, "control"], "space", lazy.spawn("setxkbmap -layout us")),
     Key([mod, "control"], "t", lazy.spawn("telegram-desktop")),
