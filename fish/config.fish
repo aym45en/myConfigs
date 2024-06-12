@@ -13,7 +13,6 @@ if status is-interactive
   alias lsa 'ls -lSa'
   alias grep 'grep --color=auto'
   alias ca 'clear'
-  alias open 'xdg-open'
   alias vi 'nvim'
   alias .2 'cd ../..'
   alias .3 'cd ../../..'
@@ -25,6 +24,7 @@ if status is-interactive
   if test (uname -n) = 'localhost'
     neofetch
     alias passkey "gpg -d ~/univ-info/.p/p.pdf"
+    set -U fish_user_paths $fish_user_paths ~/bin
     function pull_all_repos
       set -l repos ~/univ-info/s4/ \
                    ~/univ-info/.p \
@@ -44,6 +44,7 @@ if status is-interactive
     end
   else
     alias passkey "gpg -d ~/.p/p.pdf"
+    alias open 'xdg-open'
     function pull_all_repos
       set -l repos ~/Desktop/s4/ \
                    ~/.p \
