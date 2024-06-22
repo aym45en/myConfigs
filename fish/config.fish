@@ -1,8 +1,8 @@
 if status is-interactive
 
   set -U fish_greeting ""
-  set -U EDITOR nvim
-
+  set -Ux  EDITOR nvim
+  
   alias ls 'ls --color=auto'
   alias la 'ls -a'
   alias ll 'ls -l'
@@ -26,10 +26,9 @@ if status is-interactive
     alias passkey "gpg -d ~/univ-info/.p/p.pdf"
     set -U fish_user_paths $fish_user_paths ~/bin
     function pull_all_repos
-      set -l repos ~/univ-info/s4/ \
-                   ~/univ-info/.p \
+      set -l repos ~/univ-info/.p \
                    ~/univ-info/.myconfigs \
-                   ~/myNovel/ibada 
+                   ~/storage/shared/Documents/myNovel/ibada/
       for repo in $repos
           cd $repo
           set_color blue
@@ -46,10 +45,8 @@ if status is-interactive
     alias passkey "gpg -d ~/.p/p.pdf"
     alias open 'xdg-open'
     function pull_all_repos
-      set -l repos ~/Desktop/s4/ \
-                   ~/.p \
-                   ~/.myConfigs \
-                   ~/ibada 
+      set -l repos ~/.p \
+                   ~/.myConfigs 
       for repo in $repos
           cd $repo
           set_color blue
