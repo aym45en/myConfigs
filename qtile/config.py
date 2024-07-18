@@ -91,11 +91,12 @@ keys = [
     
     #-------------my shortcuts----------------------
 
-    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl s 10+"),desc="Increase brightness"),
-    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl s 10-"),desc="Decrease brightness"),
+    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl s 10%+"),desc="Increase brightness"),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl s 10%-"),desc="Decrease brightness"),
 
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer sset Master 1- unmute"),desc="Decrease Audio"),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer sset Master 1+ unmute"),desc="Increase Audio"),
+    Key([], "XF86AudioMute", lazy.spawn('sh -c \'VOLUME_FILE="/tmp/volume_level" && MUTE_STATE=$(amixer get Master | grep -oP "\[o.+\]" | head -1) && if [ "$MUTE_STATE" == "[off]" ]; then VOLUME=$(cat $VOLUME_FILE); amixer set Master "$VOLUME"% unmute; else VOLUME=$(amixer get Master | grep -oP "\[\d+%\]" | head -1 | tr -d "[]%"); echo $VOLUME > $VOLUME_FILE; amixer set Master 0 mute; fi\''), desc="Toggle Mute"),
 
     Key([alt], "space", lazy.spawn("setxkbmap -layout ara")),
     Key([alt, "control"], "space", lazy.spawn("setxkbmap -layout us")),
