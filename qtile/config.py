@@ -104,7 +104,8 @@ keys = [
     Key([mod], "c", lazy.spawn("code")),
     Key([mod], "b", lazy.spawn("chromium")),
     Key([mod], "e", lazy.spawn("thunar")),
-    Key([mod], "g", lazy.spawn("godot")),
+    Key([mod], "a", lazy.spawn("android-studio")),
+    Key([mod], "u", lazy.spawn("unityhub")),
 ]
 
 
